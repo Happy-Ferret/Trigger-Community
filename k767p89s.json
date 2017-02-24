@@ -1,0 +1,1 @@
+{"group":0,"locales":{"en-US":{"name":"Demo","description":"This shows how to write user scripts. It is just a demo."}},"code":{"exec":"showNotification('Title', 'Body');"}}
