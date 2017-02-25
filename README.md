@@ -71,9 +71,9 @@ This sends a synthesized key to whatever is currently focused. It returns a prom
 * Linux - [Github :: Noitidart / ostypes - ostypes_x11.jsm L1128-L1578](https://github.com/Noitidart/ostypes/blob/master/ostypes_x11.jsm#L1128-L1578)
 * Mac - [Github :: Noitidart / ostypes - ostypes_mac.jsm L630-L747](https://github.com/Noitidart/ostypes/blob/master/ostypes_mac.jsm#L630-L747)
 
-You can instead set `codename` to a string of the number surrounded by single quotes. For example, the code "XK_A" corresponds to a number value of 65 - so calling `system.input.sendKey("XK_A")` is the same as calling `system.input.sendKey("'65'")`
+You can instead set `codename` to a string of the code number surrounded by single quotes. For example, the code "XK_A" corresponds to a number value of 65 - so calling `system.input.sendKey("XK_A")` is the same as calling `system.input.sendKey("'65'")`
 
-*Important Notes* There are future plans to make the keys cross platform, and the platform dependent keys will maintain the platform prefix. This was already implemented for Windows, so any "VK_" prefix should not be used - example: if the keyname us "VK_A" just send "A".
+*Important Notes* There are future plans to make the keys cross platform, and the platform dependent keys will maintain the platform prefix. This was already implemented for Windows, so any "VK_" prefix should not be used - example: if the code name is "VK_A" just send "A".
 
 ### system.path
 This module provides information and methods on the system file paths.
