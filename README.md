@@ -34,11 +34,11 @@ For example, in the Trigger localization file I have a string called `error`. No
 ## system
 This branch offers a collection of modules similar to the `browser` API. The functionality here is focused on operating system specifics.
 
-| Modules                         |
-|:--------------------------------|
-| **[file](#systemfile)**         |
-| **[keyboard](#systemkeyboard)** |
-| **[path](#systempath)**         |
+| Modules                   |
+|:--------------------------|
+| **[file](#systemfile)**   |
+| **[input](#systeminput)** |
+| **[path](#systempath)**   |
 
 ### system.file
 This module enables manipulating files on the system.
@@ -53,17 +53,17 @@ This module enables manipulating files on the system.
 
 Tries to launch the file at `path`. If the file is directory, it will open it in the platform file viewer. If the file is a special type of file (text, image, etc) it will open it with the default application for that file type. If the file is a program, it will launch it detached. The promise is resolved with no arguments after the attempt to launch is made. If the attempt to launch fails for any reason, it is still not resolved with any arguments.
 
-### system.keyboard
-This module works with the keyboard on a platform level.
+### system.input
+This module works with the input mechanisms and devices of the platform. Devices include keyboard, mouse. Mechanisms include window messages.
 
 | Methods                                                                        |
 |:-------------------------------------------------------------------------------|
-| **[sendKey](#sendkey)** - `promise<> system.keyboard.sendKey(string codename)` |
+| **[sendKey](#sendkey)** - `promise<> system.input.sendKey(string codename)` |
 
 
 #### Methods
 ##### sendKey
-`promise<> system.keyboard.sendKey(string codename)`
+`promise<> system.input.sendKey(string codename)`
 
 This sends a synthesized key to whatever is currently focused. It returns a promise which resolves with no arguments after the key was sent. If the key fails to send it is silent, meaning there are still no arguments passed to the resolving callback. The argument `codename` is a string and is platform dependent. For instance the `codename` for the "A" key on Windows is "VK_A", on Linux it is "XK_A", and on Mac it is "kVK_ANSI_A". You can find a list of these `codename`s at:
 
@@ -71,7 +71,7 @@ This sends a synthesized key to whatever is currently focused. It returns a prom
 * Linux - [Github :: Noitidart / ostypes - ostypes_x11.jsm L1128-L1578](https://github.com/Noitidart/ostypes/blob/master/ostypes_x11.jsm#L1128-L1578)
 * Mac - [Github :: Noitidart / ostypes - ostypes_mac.jsm L630-L747](https://github.com/Noitidart/ostypes/blob/master/ostypes_mac.jsm#L630-L747)
 
-You can instead set `codename` to a string of the number surrounded by single quotes. For example, the code "XK_A" corresponds to a number value of 65 - so calling `system.keyboard.sendKey("XK_A")` is the same as calling `system.keyboard.sendKey("'65'")`
+You can instead set `codename` to a string of the number surrounded by single quotes. For example, the code "XK_A" corresponds to a number value of 65 - so calling `system.input.sendKey("XK_A")` is the same as calling `system.input.sendKey("'65'")`
 
 *Important Notes* There are future plans to make the keys cross platform, and the platform dependent keys will maintain the platform prefix. This was already implemented for Windows, so any "VK_" prefix should not be used - example: if the keyname us "VK_A" just send "A".
 
