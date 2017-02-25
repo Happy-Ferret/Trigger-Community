@@ -4,10 +4,10 @@ Repository of custom commands shared by users of the Trigger browser extension. 
 # API
 Here is the documentation on how to write custom commands (user scripts) for Trigger.
 
-| Interfaces                      |
-|:--------------------------------|
-| **[browser](#browser)**         |
-| **[system](#system)**           |
+| Interfaces              |
+|:------------------------|
+| **[browser](#browser)** |
+| **[system](#system)**   |
 
 ## browser
 The complete `browser.*` interface of WebExtensions is available. You can read about the details here at [MDN :: WebExtensions - APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API).
@@ -43,9 +43,9 @@ This branch offers a collection of modules similar to the `browser` API. The fun
 ### system.file
 This module enables manipulating files on the system.
 
-| Methods                                                          |
-|:-----------------------------------------------------------------|
-| **[launch](launch)** - `boolean system.file.launch(string path)` |
+| Methods                                                           |
+|:------------------------------------------------------------------|
+| **[launch](#launch)** - `boolean system.file.launch(string path)` |
 
 #### Methods
 ##### launch
@@ -58,7 +58,7 @@ This module works with the keyboard on a platform level.
 
 | Methods                                                               |
 |:----------------------------------------------------------------------|
-| **[sendKey](sendkey)** - `void system.keyboard.sendKey(string code)` |
+| **[sendKey](#sendkey)** - `void system.keyboard.sendKey(string code)` |
 
 
 #### Methods
