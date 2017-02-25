@@ -1,8 +1,8 @@
 # Trigger Community
-Repository of custom commands shared by users of the Trigger browser extension. Please do not manualy submit pull requests. Please use Trigger dashboard to create and submit user scripts.
+Repository of custom commands shared by users of the Trigger browser extension. Please do not manualy submit pull requests. Please use Trigger dashboard to create and submit command (userscripts).
 
 # API
-Here is the documentation on how to write custom commands (user scripts) for Trigger.
+Here is the documentation on the special functions available to commands.
 
 | Interfaces              |
 |:------------------------|
@@ -12,12 +12,12 @@ Here is the documentation on how to write custom commands (user scripts) for Tri
 ## browser
 The complete `browser.*` interface of WebExtensions is available. You can read about the details here at [MDN :: WebExtensions - APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API).
 
-There is two critical difference.
+There are two critical differences:
 
 1. Callbacks cannot be used.
-2. All methods return a promise, even if they MDN documentation says they do not.
+2. All methods return a promise (which resolves with the expected arguments), even if MDN documentation says they do not.
 
-For example, in the Trigger localization file I have a string called `error`. Normally you would obtain this string by doing `let str_error = browser.i18n.getMessage('error')`, becuase MDN docs says this returns a string synchronously. However we are in the Trigger user script scope, so it returns a promise. Here are some ways to do this:
+For example, in the Trigger localization file I have a string called `error`. Normally you would obtain this string by doing `let str_error = browser.i18n.getMessage('error')`, becuase MDN docs says this returns a string synchronously. However we are in the Trigger command/userscript scope, so it returns a promise. Here are ways how you can handle this:
 
   > *ES5*
   > ```
