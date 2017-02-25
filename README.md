@@ -89,7 +89,7 @@ This module provides information and methods on the system file paths.
 
 #### Types
 ##### PathName
-The first argument passed to `getPath`. Identifies that you want special path on the system.
+The first argument passed to `system.path.get`. Identifies that you want special path on the system.
 
 | Enum                                                        |
 |:------------------------------------------------------------|
