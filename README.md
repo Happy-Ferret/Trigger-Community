@@ -78,9 +78,9 @@ This module provides information and methods on the system file paths.
 |:--------------------------|
 | **[PathName](#pathname)** |
 
-| Methods                                                    |
-|:-----------------------------------------------------------|
-| **[get](#get)** - `string  system.path.get(PathName name)` |
+| Methods                                                            |
+|:-------------------------------------------------------------------|
+| **[get](#get)** - `Promise<string> system.path.get(PathName name)` |
 
 
 #### Types
@@ -96,6 +96,6 @@ The first argument passed to `getPath`. Identifies that you want special path on
 
 #### Methods
 ##### get
-`string system.path.get(PathName name)`
+`Promise<string path> system.path.get(PathName name)`
 
-Returns a string of the special system path associated with the `name`. If `name` is not valid then it throws.
+Returns a promise which resolves with the first argument `path` being a string of the special system path associated with the `name`. If `name` is not valid then it resolves with a `path` being a blank string.
