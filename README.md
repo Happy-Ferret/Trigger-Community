@@ -81,4 +81,5 @@ The first argument passed to `getPath`. Identifies that you want special path on
 #### Methods
 ##### get
 `string system.path.get(PathName name)`
+
 Returns a string of the special system path associated with the `name`. If `name` is not valid then it throws.
