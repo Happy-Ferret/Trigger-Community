@@ -78,9 +78,9 @@ This module provides information and methods on the system file paths.
 |:--------------------------|
 | **[PathName](#pathname)** |
 
-| Methods                                                            |
-|:-------------------------------------------------------------------|
-| **[get](#get)** - `Promise<string> system.path.get(PathName name)` |
+| Methods                                                                 |
+|:------------------------------------------------------------------------|
+| **[get](#get)** - `promise<string path> system.path.get(PathName name)` |
 
 
 #### Types
