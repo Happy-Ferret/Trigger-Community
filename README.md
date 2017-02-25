@@ -63,13 +63,17 @@ This module works with the keyboard on a platform level.
 
 #### Methods
 ##### sendKey
-`promise<> system.file.sendKey(string keyname)`
+`promise<> system.keyboard.sendKey(string keyname)`
 
-This sends a synthesized key to whatever is currently focused. It returns a promise which resolves with no arguments after the key was sent. If the key fails to send it is silent, meaning there are still no arguments passed to the resolving callback. The argument `keyname` is a string and is platform dependent. For instance the `keyname` for the "A" key on Windows is "VK_A", on Linux it is `XK_A`, and on Mac it is `kVK_ANSI_A`. You can find a list of these codes at:
+This sends a synthesized key to whatever is currently focused. It returns a promise which resolves with no arguments after the key was sent. If the key fails to send it is silent, meaning there are still no arguments passed to the resolving callback. The argument `keyname` is a string and is platform dependent. For instance the `keyname` for the "A" key on Windows is "VK_A", on Linux it is "XK_A", and on Mac it is "kVK_ANSI_A". You can find a list of these codes at:
 
 * Windows - [MSDN :: Virtual Key Codes](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx)
 * Linux - [Github :: Noitidart / ostypes - ostypes_x11.jsm L1128-L1578](https://github.com/Noitidart/ostypes/blob/master/ostypes_x11.jsm#L1128-L1578)
 * Mac - [Github :: Noitidart / ostypes - ostypes_mac.jsm L630-L747](https://github.com/Noitidart/ostypes/blob/master/ostypes_mac.jsm#L630-L747)
+
+You can optionally set code to a string of the number surrounded by single quotes. For example, the code "XK_A" corresponds to a number value of 65 - so calling `system.file.sendKey("XK_A")` is the same as calling `system.keyboard.sendKey("'65'")`
+
+There are future plans to make the keys cross platform, and the paltform dependent keys will maintain the platform prefix.
 
 ### system.path
 This module provides information and methods on the system file paths.
